@@ -14,6 +14,7 @@
         </div>
         <div class="sentenceInfo">
             <p>Words: <span id="amountWords">0</span></p>
+            <p>Characters: <span id="amountCharacters">0</span></p>
         </div>
     </div>
 </body>
@@ -25,5 +26,6 @@
             return word.length > 0;
         });	
         document.getElementById("amountWords").innerHTML = allWordsArray.length;
+        document.getElementById("amountCharacters").innerHTML = e.target.value.length;
     });
 </script>
