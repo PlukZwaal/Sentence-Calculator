@@ -15,6 +15,7 @@
         <div class="sentenceInfo">
             <p>Words: <span id="amountWords">0</span></p>
             <p>Characters: <span id="amountCharacters">0</span></p>
+            <p>Vowels: <span id="amountVowels">0</span></p>
         </div>
     </div>
 </body>
@@ -27,5 +28,8 @@
         });	
         document.getElementById("amountWords").innerHTML = allWordsArray.length;
         document.getElementById("amountCharacters").innerHTML = e.target.value.length;
+        var allWordsString = allWordsArray.join("");
+        var amountVowels = allWordsString.match(/[aeiou]/gi).length;
+        document.getElementById("amountVowels").innerHTML = amountVowels;
     });
 </script>
