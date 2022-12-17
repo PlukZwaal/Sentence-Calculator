@@ -12,8 +12,18 @@
         <div class="sentence">
             <textarea id="inputSentence" type="text" placeholder="Enter here your sentence."></textarea>
         </div>
+        <div class="sentenceInfo">
+            <p>Words: <span id="amountWords">0</span></p>
+        </div>
     </div>
 </body>
 </html>
 <script>
+    inputSentence.addEventListener("input", function (e) {
+        var splitBySpaces = e.target.value.split(" ");
+        allWordsArray = splitBySpaces.filter(function (word) {
+            return word.length > 0;
+        });	
+        document.getElementById("amountWords").innerHTML = allWordsArray.length;
+    });
 </script>
