@@ -5,22 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Sentence-Calculator</title>
 </head>
-<body>
-    <div class="wrapper">
-        <div class="sentence">
-            <textarea id="inputSentence" type="text" placeholder="Enter here your sentence."></textarea>
+<body id="body">
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <h1>Sentence-Calculator</h1>
+                <button id="btn1" class="btn1"></button>
+                <button id="btn2" class="btn2"></button>
+                <button id="btn3" class="btn3"></button>
+            </div>
         </div>
-        <div class="sentenceInfo">
-            <p>Words: <span id="amountWords">0</span></p>
-            <p>Characters: <span id="amountCharacters">0</span></p>
-            <p>Vowels: <span id="amountVowels">0</span></p>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="sentence">
+                <textarea id="inputSentence" type="text" placeholder="Enter here your sentence."></textarea>
+            </div>
+            <div class="sentenceInfo">
+                <p>Words: <span id="amountWords">0</span></p>
+                <p>Characters: <span id="amountCharacters">0</span></p>
+                <p>Vowels: <span id="amountVowels">0</span></p>
+            </div>
         </div>
-    </div>
+    </main>
+    <footer> 
+
+    </footer>
 </body>
 </html>
 <script>
+    document.getElementById('btn1').addEventListener('click', function () {
+        document.getElementById('body').style.backgroundImage = 'linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)';
+        document.getElementById('btn1').style.display = 'none';
+        document.getElementById('btn2').style.display = 'block';
+    });
+    document.getElementById('btn2').addEventListener('click', function () {
+        document.getElementById('body').style.backgroundImage = 'linear-gradient(to right, #fa709a 0%, #fee140 100%)';
+        document.getElementById('btn2').style.display = 'none';
+        document.getElementById('btn3').style.display = 'block';
+    });
+    document.getElementById('btn3').addEventListener('click', function () {
+        document.getElementById('body').style.backgroundImage = 'linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%)';
+        document.getElementById('btn3').style.display = 'none';
+        document.getElementById('btn1').style.display = 'block';
+    });
+
     inputSentence.addEventListener("input", function (e) {
         var splitBySpaces = e.target.value.split(" ");
         allWordsArray = splitBySpaces.filter(function (word) {
